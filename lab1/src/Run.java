@@ -3,4 +3,8 @@ public class Run implements MoveMethod{
     public String Moving() {
         return "Бегу";
     }
+    @Override
+    public String Moved() {
+        return "Прибежал";
+    }
 }

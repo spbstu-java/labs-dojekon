@@ -3,4 +3,8 @@ public class Ride implements MoveMethod {
     public String Moving() {
         return "Еду";
     }
+    @Override
+    public String Moved() {
+        return "Приехал";
+    }
 }

@@ -3,4 +3,8 @@ public class Fly implements MoveMethod{
     public String Moving() {
         return "Лечу";
     }
+    @Override
+    public String Moved() {
+        return "Прилетел";
+    }
 }
