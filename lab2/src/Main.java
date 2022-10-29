@@ -1,4 +1,3 @@
-import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 public class Main {
@@ -8,9 +7,18 @@ public class Main {
         try {
             Scanner scanner = new Scanner(System.in);
             N = FileAccess.ReadIntFile(scanner.nextLine());
-        } catch (Ex e) {
+        } catch (FileEx e) {
             System.out.println(e.toString());
+            System.exit(-1);
         }
+
+        try {
+            if (N > 1000000) throw new NEx("Too much");
+        } catch (NEx e) {
+            System.out.println(e.toString());
+            System.exit(-1);
+        }
+
         System.out.println(N);
     }
 }
