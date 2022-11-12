@@ -4,7 +4,7 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class FileAccess {
-    public static int ReadIntFile(String filePath) throws FileEx {
+    public static int readIntFile(String filePath) throws FileEx {
         File file = new File(filePath);
         if (file.exists()) {
             if (file.isFile()) {
