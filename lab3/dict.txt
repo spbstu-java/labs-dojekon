@@ -1,0 +1,3 @@
+hello | привет
+bye | пока
+how are you | как дела
