@@ -6,9 +6,9 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Main {
-    private static HashMap<String, String> dictionary = new HashMap<>();
+    private static final HashMap<String, String> dictionary = new HashMap<>();
     private static String translation = "";
-    private static int maxLenghtOfCollocation = 0;
+    private static int maxLengthOfCollocation = 0;
     public static void main(String[] args) {
         try {
             loadDictionary(args[0]);
@@ -33,7 +33,7 @@ public class Main {
                 String[] line = scanner.nextLine().split("\\|");
                 String key = line[0].trim().toLowerCase();
                 int length = key.split(" ").length;
-                if (length > maxLenghtOfCollocation) maxLenghtOfCollocation = length;
+                if (length > maxLengthOfCollocation) maxLengthOfCollocation = length;
                 String value = line[1].trim().toLowerCase();
                 dictionary.put(key, value);
             }
@@ -59,7 +59,7 @@ public class Main {
         for (int i = 0; i < wordlist.size(); i++) {
             String phraseTrans = null; // Перевод фразы
             int lastFind = 0; // Индекс последнейго слова, которое дало результат
-            for (int j = 0; j < maxLenghtOfCollocation && j+i < wordlist.size(); j++) { // Берём слова из списка,
+            for (int j = 0; j < maxLengthOfCollocation && j+i < wordlist.size(); j++) { // Берём слова из списка,
                 // но не больше чем размер списка и не больше, чем слов в максимальном словосочетании
                 String currPhrase = ""; // Текущее словосочетание
                 String currTrans = null; // Перевод текущего словосочетания
